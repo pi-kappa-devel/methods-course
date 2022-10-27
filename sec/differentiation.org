@@ -1,0 +1,145 @@
+A function’s rate of change conveys very useful information about the nature of the rule that associates the domain and the codomain of the function. Suppose, for example, that $C$ is a function describing the cost of a production process. For each desired output quantity $q\in \mathbb{R}_{\ge 0}$, $C(q)$ gives the minimum production cost for $q$ (we call such functions /cost functions/ in economics). Knowledge of $C$ allows one to find the minimum cost for producing an output quantity of, say, $5$. What if we want to calculate the incremental cost of "slightly increasing production" by a small amount? We can calculate the additional cost by examining the rate of change of the cost function (this is known in economics as the /marginal cost function/).
+#+hugo: more
+
+So far, so good, but when it comes to the details of calculating the rate of change of $C$, one quickly realizes that it is not very clear what is meant by "slightly increasing production". Should we use production increments of one unit? Should we use some other arbitrary increment $\Delta q = q_{2} - q_{1}$? Well, if the cost function $C$ is affine or constant, then unit increments work fine. As a matter of fact, any arbitrary choice of increment $\Delta q$ works equally well. However, our luck is exhausted with such simple functions. For functions with non-trivial curvatures, the change that we calculate depends crucially on the length of the increment $\Delta q$ that we use.
+
+* The Secant
+A *secant* is a line with endpoints two distinct points of a function's graph. The secant's slope measures the rate of change of a function for a given increment. For a real function $f$ and two points $x_{1}, x_{2}$ in its domain, the secant's slope is given by the ratio of changes in the range and the domain of the function, i.e.
+$$
+\frac{\Delta y}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{\Delta x} = \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}}.
+$$
+For highly curved functions, the slope of the secant can change significantly as the increment $\Delta x$ changes. 
+
+{{{figure(secant,differentiation,secant_graph)}}}
+
+* First Derivative
+The first derivative of a function gives us the rate of change of a function by formalizing what is meant by small changes in a way that avoids arbitrary choices of increments. The *first derivative* (or simply derivative if first is understood from context) of a function $f$, if exists, is the limit of the secant of $f$ as the domain change increments go to zero, i.e.,
+$$
+\frac{\mathrm{d} f(x)}{\mathrm{d} x} = \lim_{x_{2} \to x_{1}} \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}.
+$$
+The derivative is a (new) function giving the rate of change of $f$ for infinitesimal changes in its domain variable. The derivative of $f$ is often denoted by $f'$.
+
+If a function’s derivative is negative, the function is decreasing. If it is positive, the function is increasing.
+
+{{{figure(first-derivative,differentiation,first_derivative_graph)}}}
+
+#+begin_inplace_exercise
+The cost of producing $q$ units of a commodity is given by $C(q) = q^{2} + q + 100$. 
+  1. Compute the rate of change of $C$ for a unit increment at $q = 100$ . 
+  2. Compute the incremental cost $C(q + 1) - C(q)$ and explain in words its meaning. 
+  3. Compute the marginal cost $C'(q)$ and $C'(100)$. What is the difference between $C'(q)$ and $C(q + 1) - C(q)$? 
+#+end_inplace_exercise
+
+* Second Derivative
+Nothing prevents us from applying the same differentiation process to a first derivative of a function. Suppose that we are given a function $f$, for which we can calculate the first derivative $f'$. We can then think of $f'$ as a function, say, $g=f'$, and calculate the first derivative of $g$. This gives us the derivative $g'$ of $g$, which can be associated back to the original function $f$ by $g' = (f')'$. 
+
+Why would we be interested in something like this? The derivative of the derivative of $f$ reveals information about the curvature of $f$. The curvature of a function can be geometrically thought of as the function's bending. In economics and finance, the curvatures are pivotal in calculating the risk preferences of individuals (see the /relative/ and /absolute risk aversion/ measures). 
+
+The *second derivative* of a function $f$, if exists, is the limit of second order finite differences of $f$ as the domain change increments go to zero, i.e.,
+\begin{align*}
+\frac{\mathrm{d}^{2} f(x)}{\mathrm{d} x^{2}} &= \lim_{\Delta x \to 0} \frac{f(x_{1} + \Delta x) - 2f(x_{1}) + f(x_{1} - \Delta x)}{(\Delta x)^{2}} \\
+&= \lim_{\Delta x \to 0} \frac{\frac{f(x_{1} + \Delta x) - f(x_{1})}{\Delta x} - \frac{f(x_{1}) - f(x_{1} - \Delta x)}{\Delta x}}{\Delta x} \\
+&= \lim_{\Delta x \to 0} \frac{f'(x_{1} + \Delta x) - f'(x_{1})}{\Delta x}.
+\end{align*}
+If a function's second derivative is negative, the function is *concave* (curvature opening down). If its second derivative is positive, it is *convex* (curvature opening up).
+
+#+begin_two_columns
+{{{figure(concave,differentiation,concave_graph)}}}
+{{{figure(convex,differentiation,convex_graph)}}}
+#+end_two_columns
+
+#+begin_inplace_exercise
+Let $g(x) = 3 x^{3} - \frac{1}{5} x^{5}$.
+  1. Find $g'$ and $g''$.
+  2. Check where $g$ is increasing and where it is concave.
+#+end_inplace_exercise
+
+* Derivatives of Higher Order
+We can recursively continue defining derivatives of higher order. The interpretations of higher order derivatives become more obscure. A notable exception is the third derivative, which is used to measure the /prudence/ of preferences (attitude towards savings for rainy days) in household finance and macroeconomics. Higher order derivatives are, nevertheless, very useful in economics because they can be used to approximate many functions with arbitrary precision. See the discussion of the [[sec:taylor][Taylor Expansion Section]] for an example.
+
+For any $k\ge 2$, the $k\text{-th}$ order *derivative* of a function $f$, if exists, is the limit of the secant of the $(k-1)\text{-th}$ derivative of $f$ as the domain change increments go to zero, i.e.,
+\begin{align*}
+\frac{\mathrm{d}^{k} f(x)}{\mathrm{d} x^{k}} &= \lim_{\Delta x \to 0} \frac{\frac{\mathrm{d}^{k-1} f (x_{1} + \Delta x)}{\mathrm{d} x^{k-1}} - \frac{\mathrm{d}^{k-1} f (x_{1})}{\mathrm{d} x^{k-1}}}{\Delta x}.
+\end{align*}
+The $k\text{-th}$ order derivative of a function $f$ is more compactly denoted as $f^{(k)}$. With this notation we can rewrite the definition for the $k\text{-th}$ order derivative as $f^{(k)}(x) = (f^{(k-1)})'(x)$.
+
+* Continuous and Smooth Functions
+A function is *continuous* if arbitrarily small changes in the domain result in arbitrarily small changes in the range of the function. Giving an exact definition or a good intuition of continuity requires introducing concepts that go way beyond the scope of the material. In business and economic studies, continuity is mostly treated as a technicality that is always present in the used functions. The good news is that whenever a function is differentiable, it is also continuous. Therefore, familiarity with the usual calculus toolbox can serve as a guide for continuity.
+
+A stronger concept (that means more restrictive, i.e., less functions are satisfying it) is that of smoothness. We can define smoothness based on the ideas that we have already introduced. A function $f$ is said to be *smooth* if its derivative $f^{(k)}$ exists for any integer $k\in\mathbb{N}$. The graphs of smooth functions do not exhibit any kinks or corners, which is from where these functions are named after.
+
+#+begin_two_columns
+{{{figure(non-continuous,differentiation,non_continuous_graph)}}}
+{{{figure(non-smooth,differentiation,non_smooth_graph)}}}
+#+end_two_columns
+
+* Taylor Expansion
+<<sec:taylor>>
+Smooth functions are very useful in economics and finance because many of these functions can be approximated by expressions based on their derivatives. An example of such an approximation is the /Campbell-Shiller decomposition/, which provides a simple way to describe asset returns as functions of prices and dividends in finance.
+
+For a smooth function $f$ the *Taylor series expansion* of $f$ at $x_{0}$ is the function given by
+\begin{align*}
+T_{f}(x) &= \sum_{k=0}^{\infty} \frac{f^{(k)}(x_{0})}{k!}(x - x_{0})^{k} \\
+&= f(x_{0}) + f^{(1)}(x_{0})(x - x_{0}) + \frac{f^{(2)}(x_{0})}{2}(x - x_{0})^{2} + \dots
+\end{align*}
+For many well behaved functions the Taylor series is convergent and it approximates $f$. For such cases, we simply write
+\begin{align*}
+f(x) &= f(x_{0}) + f^{(1)}(x_{0})(x - x_{0}) + \frac{f^{(2)}(x_{0})}{2}(x - x_{0})^{2} + \dots
+\end{align*}
+
+#+begin_inplace_exercise
+Perform a first-order Taylor approximation to the function $R(x) = \log (1 + \mathrm{e}^{x})$ around $x=d−p$. This is the approximation used in the Campbell-Shiller decomposition.
+#+end_inplace_exercise
+
+* Product and Quotient Rule
+The *product rule* is used to calculate the derivatives of products of functions. The derivative of the product of two functions $f$ and $g$ is given by
+$$
+(fg)'(x) = f'(x)g(x) + f(x)g'(x).
+$$
+
+The *quotient rule* is used to calculate the derivatives of ratios of functions. The derivative of the ratio of $f$ to $g$ is given by
+$$
+\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^{2}}.
+$$
+
+* Chain Rule
+A *composite* function is a function that combines the transformations of two functions. Suppose that we are given two functions $f \colon X \to Y$ and $g\colon Y \to Z$. We can define a composite function $h\colon X \to Z$ by $h(x) = g(f(x))$. The composition of $g$ and $f$ is sometimes denoted as $g\circ f$.
+
+The derivatives of composite functions are calculated according to the  *chain rule*. The derivative of the composition of two functions $f$ to $g$ is given by
+$$
+(g \circ f)'(x) = g'(f(x)) f'(x).
+$$
+
+#+begin_inplace_exercise
+Compute the following derivatives:
+  1. $\frac{\mathrm{d} Z}{\mathrm{d} t}$ when $Z = \left( u^{2} - 1 \right)^{3}$ and $u =t^{3}$
+  2. $\frac{\mathrm{d} K}{\mathrm{d} t}$ when $K = \sqrt{L}$ and $L =  1 + \frac{1}{t}$
+#+end_inplace_exercise
+
+* Partial Derivatives
+The idea of differentiation is not restricted to functions of one variable. We can calculate rate of changes for functions with more variables by letting one variable variate while keeping all other variables fixed. This concept has many applications in economics, business, and finance because many commonly used functions have more than one variable.
+
+Suppose that we are given a function $f\colon X_{1} \times X_{2} \to Y$. The *partial derivative* of $f$ with respect to the first variable is defined as
+$$
+\frac{\partial f(x_{1}, x_{2})}{\partial x_{1}} = \lim_{\Delta x_{1} \to 0} \frac{f(x_{1} + \Delta x_{1}, x_{2}) - f(x_{1}, x_{2})}{\Delta x_{1}}.
+$$
+The partial derivative of $f$ with respect to the second variable is defined as
+$$
+\frac{\partial f(x_{1}, x_{2})}{\partial x_{2}} = \lim_{\Delta x_{2} \to 0} \frac{f(x_{1}, x_{2}  + \Delta x_{2}) - f(x_{1}, x_{2})}{\Delta x_{2}}.
+$$
+Albeit a bit tedious, it is straightforward to generalize the concept for functions of more than two variables. The partial derivative of a function $f$ of $k$ variables with respect to the $j\text{-th}$ variable is given by
+\begin{align*}
+\frac{\partial f(x)}{\partial x_{j}} &= \frac{\partial f(x_{1}, \dots, x_{j}, \dots, x_{k})}{\partial x_{j}} \\
+&= \lim_{\Delta x_{j} \to 0} \frac{f(x_{1}, \dots, x_{j} + \Delta x_{j}, \dots, x_{k}) - f(x)}{\Delta x_{j}}.
+\end{align*}
+
+It is common to denote the partial derivatives using a shorthand notation based on the differentiation variable. In this notation, the partial derivative with respect to the first variable is written as $f_{x_{1}}$, and the partial derivative with respect to the second variable as $f_{x_{2}}$.
+
+#+begin_inplace_exercise
+Calculate the partial derivatives of the Cobb-Douglas function 
+$$
+u(x_{1}, x_{2}) = A x_{1}^{\alpha} x_{2}^{\beta},
+$$
+where $A$, $\alpha$, and $\beta$ are positive constants. Can you, in addition, calculate the second order partial derivatives?
+#+end_inplace_exercise
+
