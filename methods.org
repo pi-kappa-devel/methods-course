@@ -1,5 +1,5 @@
 # Local Variables:
-# eval: (load-file (format "%spikappa-teach/export-tags-and-categories.el" (file-name-directory buffer-file-name)))
+# eval: (load-file (format "%s../pikappa-teach/export-tags-and-categories.el" (file-name-directory buffer-file-name)))
 # eval: (add-hook 'org-export-before-parsing-hook 'add-tags-to-headings)
 # End:
 
@@ -7,14 +7,14 @@
 
 #+macro: place-anchor @@html:<a id='$1-anchor' style='position:relative;visibility:hidden;top:-50px;'></a>@@
 
-#+macro: figure @@html:<figure id='$1-wrapper' class='graph-wrapper'>@@{{{place-anchor($1-graph)}}}@@html:<div id='$1-graph'></div><script type='module'>import * as mod from '/methods/js/$2.js'; mod.make_$3('$1-graph');</script></figure>@@
+#+macro: figure @@html:<figure id='$1-wrapper' class='figure-wrapper'>@@{{{place-anchor($1-figure)}}}@@html:<div id='$1-figure'></div><script type='module'>import * as mod from '/methods/js/$2.js'; mod.make_$3('$1-figure');</script></figure>@@
 
 #+TITLE: Supportive Quantitative Methods
 #+AUTHOR: Pantelis Karapanagiotis
 #+EMAIL: karapanagiotis [at] ebs [dot] edu
 #+DATE: Summer Term 2022
 
-#+hugo_base_dir: ./pikappa-teach/
+#+hugo_base_dir: ../pikappa-teach/
 #+hugo_section: topics
 
 * Sets
