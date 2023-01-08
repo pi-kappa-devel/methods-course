@@ -1,11 +1,11 @@
 A *function* is a rule that maps each element of set $X$ to exactly one element of a set $Y$. The set $X$ is called the *domain* of the function, and the set $Y$ is called the *codomain* of the function. A function that maps $X$ to $Y$ is usually denoted by $f\colon X \to Y$. For each element $x\in X$, we write $f(x)$ and read "f of x" to denote the element of $Y$ to which $x$ is mapped. A function with codomain the set of real numbers $\mathbb{R}$ is called a *real valued function*. A function with domain the set of real numbers is called a *function of a real variable*. It is usual to omit these specializations whenever they are understood from context, and simply refer to functions $f\colon \mathbb{R} \to \mathbb{R}$ as functions instead of real valued functions of a real variable.
 #+hugo: more
 
-#+begin_inplace_examples
+#+begin_examples
  - The /identity function/ $f\colon \mathbb{R} \to \mathbb{R}$ maps all real numbers to themselves, i.e., $f(x) = x$ for all $x\in\mathbb{R}$.
  - The /logarithmic function/ $f\colon \mathbb{R}_{> 0} \to \mathbb{R}$ mapping positive real numbers to their logarithm, i.e., $f(x) = \log x$ for all $x\in \mathbb{R}_{> 0}$.
  - The /exponential function/ $f\colon \mathbb{R} \to \mathbb{R}$ mapping real numbers to their exponentials, i.e., $f(x) = \mathrm{e}^x$ for all $x\in \mathbb{R}$.
-#+end_inplace_examples
+#+end_examples
 
 * Graphs
 Functions' graphs are among the most common and easily communicated ways to represent functions and depict their properties. As a mathematical object, the graph of a function is defined as a set. The *graph* of a function $f \colon X \to Y$ is the subset of the Cartesian product $X \times Y$ defined by
@@ -16,33 +16,33 @@ Graphs take familiar geometric representations of collections of points in the C
 
 The graphs of functions of two real variables are also called *surfaces*.
 
-#+begin_two_columns
-{{{figure(square_root,functions,square_root_graph)}}}
-{{{figure(square,functions,square_graph)}}}
-#+end_two_columns
+#+begin_two-column-figures
+{{{figure(square-root,methods,square_root_graph)}}}
+{{{figure(square,methods,square_graph)}}}
+#+end_two-column-figures
 
 * One to One and Onto Functions
 Although each $x \in X$ is uniquely mapped to $f(x)$, different elements of $X$ can be mapped to the same element of $Y$. A function that maps each element of $X$ to a unique element of $Y$ is called *one to one* or *injection*.
 
-#+begin_inplace_examples
+#+begin_examples
  - The identity function $f(x) = x$ is an injection.
  - The constant function $f\colon \mathbb{R} \to \mathbb{R}$ mapping all real numbers to the constant real number $5$, i.e., $f(x)=5$ for all $x\in\mathbb{R}$, is not an injection.
  - The logarithm and exponential functions are injections.
-#+end_inplace_examples
+#+end_examples
 
 Not all elements of $Y$ have to be necessarily used by the association rule of the function. The subset of the codomain $Y$ used by the function's rule is called *range*, and it is denoted by $f(X)$. In general, we have $f(X)\subseteq Y$, and if the last relation holds with equality, i.e., $f(X) = Y$, we say that $f$ is *onto* or a *surjection*. A function that is simultaneously an injection and a surjection is called *bijection*.
 
-#+begin_inplace_examples
+#+begin_examples
  - The identity function $f(x) = x$ is an injection and a surjection, namely a bijection.
  - The constant function $f(x)=5$ is neither an injection nor a surjection.
  - The $f\colon \mathbb{R} \to \mathbb{R}$ that maps all real numbers to their absolute value (distance from zero), i.e., $f(x)= \left|x\right|$ for all $x\in\mathbb{R}$, is not a surjection.
  - The logarithm is a surjection, but the exponential function is not a surjection.
-#+end_inplace_examples
+#+end_examples
 
-#+begin_two_columns
-{{{figure(cubic,functions,cubic_graph)}}}
-{{{figure(abs,functions,abs_graph)}}}
-#+end_two_columns
+#+begin_two-column-figures
+{{{figure(cubic,methods,cubic_graph)}}}
+{{{figure(abs,methods,abs_graph)}}}
+#+end_two-column-figures
 
 * Functions of multiple variables
 
@@ -50,15 +50,15 @@ It is fruitful to define rules for associating things from multiple sets to a co
 
 A mapping $f\colon \times_{i=1}^{n} X_{i} \to Y$ is called a *function of multiple variables* (in this case $n$ variables). We write $f(x_{1}, x_{2}, \dots, x_{n})\in Y$ to denote the value of the an element $(x_{1}, x_{2}, \dots, x_{n}) \in  \times_{i=1}^{n} X_{i}$. Sometimes, it is more convenient to think elements of the Cartesian product $\times_{i=1}^{n} X_{i}$ as vectors and shorten the notation to $f(x)$ with the implicit convention that $x = (x_{1}, x_{2}, \dots, x_{n})$.
 
-#+begin_inplace_example
+{{{figure(cobb-douglas,methods,cobb_douglas_graph)}}}
+
+#+begin_math-example
 The most commonly used function of multiple variables used in economics, finance, and business is the *Cobb-Douglas* function $f\colon \mathbb{R}_{\ge 0}\times \mathbb{R}_{\ge 0} \to \mathbb{R}$, which has the form
 $$
 f(x_{1}, x_{2}) = A x_{1}^{\alpha} x_{2}^{\beta},
 $$
 where $A$, $\alpha$, and $\beta$ are positive constants. In consumption theory, $x_{1}$ and $x_{2}$ denote consumption quantities and $f(x_{1}, x_{2})$ denotes their associated utility. In production theory, $x_{1}$ and $x_{2}$ denote production factor quantities and $f(x_{1}, x_{2})$ denotes their associated production output. In macroeconomics, $x_{1}$ denotes labor quantities, $x_{2}$ capital quantities, and $f(x_{1}, x_{2})$ the total output of the economy. 
-#+end_inplace_example
-
-{{{figure(cobb_douglas,functions,cobb_douglas_graph)}}}
+#+end_math-example
 
 * Linear Functions
 Linear functions are special functions that preserve addition and (vector) multiplication. This property makes linear functions very useful in sciences because they allow to calculate results of addition and multiplication in the codomain from the corresponding operations in the domain and vice-versa, which can significantly reduce the calculation complexities. 
@@ -73,19 +73,19 @@ f(\alpha x_{1} + (1 - \alpha) x_{2}) = \alpha f(x_{1}) + (1 - \alpha) f(x_{2}),
 $$
 for all $x_{1}, x_{2} \in X$ and $\alpha \in [0,1]$.
 
-#+begin_two_columns
-{{{figure(linear,functions,linear_graph)}}}
-{{{figure(affine,functions,affine_graph)}}}
-#+end_two_columns
+#+begin_two-column-figures
+{{{figure(linear,methods,linear_graph)}}}
+{{{figure(affine,methods,affine_graph)}}}
+#+end_two-column-figures
 
-#+begin_inplace_example
+#+begin_math-example
 A commonly used production function in general equilibrium finance and macroeconomic models is the "Ak" function postulating that output is analogous to capital. The "Ak" function has the form $f(x) = Ax$, where $A$ is interpreted as the technological constant and $x$ the capital used in production. Typically $k$ is used to denote the input variable instead of $x$, which is why this function is known as "Ak". We keep the $x$ notation here to be consistent with previous examples.
-#+end_inplace_example
+#+end_math-example
 
 * Monotonic Functions
 In general, the value of a function can erratically change when it is given different domain values. Monotonic functions constitute a special class of functions with more predictable value changes restricted in particular directions. There are two main types of monotonic functions, namely increasing and decreasing functions. Although each type can be specialized using stricter monotonicity concepts, these two types adequately (for this introduction) describe the basic idea of monotonicity. A real valued function $f$ is *increasing* if for all $x_{1}, x_{2}\in\mathbb{R}$ such that $x_{1} \ge x_{2}$, we have $f(x_{1}) \ge f(x_{2})$. A real valued function $f$ is said to be  *decreasing* if for all $x_{1}, x_{2}\in\mathbb{R}$ such that $x_{1} \ge x_{2}$, we have $f(x_{1}) \le f(x_{2})$.
 
-#+begin_inplace_examples
+#+begin_examples
  - The identity function $f(x) = x$ is (strictly) increasing. 
  - The exponential function $f(x) = \mathrm{e}^x$ is (strictly) increasing. 
  - The function $f(x) = \mathrm{e}^{-x}$ is (strictly) decreasing. 
@@ -93,23 +93,23 @@ In general, the value of a function can erratically change when it is given diff
  - The function $f(x) = \sqrt{x}$ is (strictly) increasing. 
  - The function $f(x) = \frac{1}{\sqrt{x}}$ is (strictly) decreasing. 
  - The constant function $f(x) = 5$ is both increasing and decreasing. 
-#+end_inplace_examples
+#+end_examples
 
-#+begin_two_columns
-{{{figure(cos,functions,cos_graph)}}}
-{{{figure(arctan,functions,arctan_graph)}}}
-#+end_two_columns
+#+begin_two-column-figures
+{{{figure(cos,methods,cos_graph)}}}
+{{{figure(arctan,methods,arctan_graph)}}}
+#+end_two-column-figures
 
 * Inverse Function
 Functions are well defined rules mapping elements of a set $X$ to elements of a set $Y$. What happens, however, if we are interested in examining how elements of $Y$ are associated with elements of $X$ according to a given function? For example, suppose that $c$ is a consumption policy function (typically found in macroeconomics and finance) associating wealth (measured in Euros) with optimal consumption choices (measured in Euros). Thus, for each wealth level $w$, $c(w)$ gives the optimal spending allocated to consumption commodities and services. Sometimes it is also relevant to inquire about the required wealth for which a particular consumption level is optimal. Such an inquiry associates consumption spending with wealth levels, which goes in the inverse direction of the association that $c$ describes. 
 
+{{{figure(exp-log,methods,exp_log_graph)}}}
+
 This idea of inversion generalizes in mathematics via the concept of the inverse function. However, function inversion is not always possible. Suppose that we are given a function $f\colon X \to Y$. To have a well defined inverse function one has to be able to associate each element of $Y$ with a exactly one element of $X$. If for some $y\in Y$, there exist two $x_{1}, x_{2} \in X$ such that $f(x_{1}) = y = f(x_{2})$ one cannot unambiguously define an association from $Y$ to $X$ based on $f$ (which value of $X$ should be chosen? $x_{1}$ or $x_{2}$?). Thankfully, we do not encounter such problems if we are given a one to one function because such functions guarantee that each $x\in X$ is mapped to a unique element of $Y$. The *inverse function* of a function $f\colon X \to Y$ is, if it exists, a function undoing the operation of $f$. Namely, it is a function $f^{-1}\colon f(X) \to X$ such that $f^{-1}(f(x)) = x$ for all $x \in X$.
 
-{{{figure(exp_log,functions,exp_log_graph)}}}
-
-#+begin_inplace_exercises
+#+begin_exercises
 1. Find the inverse of the function $f(x) = 3x$
 2. Find the inverse of the function $f(x) = \mathrm{e}^{2x}$
 3. Does the function $f(x) = \sqrt{x}$ have an inverse?
-#+end_inplace_exercises
+#+end_exercises
 

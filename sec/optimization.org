@@ -33,9 +33,9 @@ v(p) = f(c(p), p) =  \max_{c} f(c, p).
 \end{align*}
 In this way, we have eliminated the dependence of the objective on the control variable and expressed the maximized values exclusively as a function of the parameter $p$. The function $v$ gives the maximum value of $f$ for each parameter $p$, and it is called *value function*.
 
-{{{figure(unconstrained-maximization,optimization,unconstrained_maximization_graph)}}}
+{{{figure(unconstrained-maximization,methods,unconstrained_maximization_slider)}}}
 
-#+begin_inplace_exercise
+#+begin_exercise
 1. Consider the function $f(c, p) = p - (c-p)^{2}$ for $c, p \in \mathbb{R}$.
    1. Calculate the maximization candidates using the first order condition for a fixed value of $p$.
    2. Show that these candidates are actually maximizers using the second order condition.
@@ -45,7 +45,7 @@ In this way, we have eliminated the dependence of the objective on the control v
 2. Let $f$ be defined by $f(x) = 2 - \frac{4x}{x^{2} + 3}$
    1. Find $f'$ and $f''$.
    2. Find all the critical points and classify them to maxima and minima.
-#+end_inplace_exercise
+#+end_exercise
 
 * Constrained Optimization
 In some decision problems, agents do not have access to the full universe of alternatives. For instance, firms are subject to technological constraints, and they can only choose to produce technologically feasible quantities. Similarly, households can only buy commodities and services that are affordable for their budgets. How can we describe such decision problems?
@@ -68,6 +68,6 @@ Under some conditions, the maximizers or minimizers of the constrained maximizat
 \end{align*}
 We can get the maximizers or minimizers of the original constrained problem using the unconstrained problem's first and second order conditions.
 
-#+begin_inplace_exercise
+#+begin_exercise
 Maximize the area of a rectangle with length $\alpha$ and width $\beta$ such that its perimeter is equal to $16\mathrm{cm}$.
-#+end_inplace_exercise
+#+end_exercise

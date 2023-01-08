@@ -8,9 +8,10 @@ A *secant* is a line with endpoints two distinct points of a function's graph. T
 $$
 \frac{\Delta y}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{\Delta x} = \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}}.
 $$
-For highly curved functions, the slope of the secant can change significantly as the increment $\Delta x$ changes. 
 
-{{{figure(secant,differentiation,secant_graph)}}}
+{{{figure(secant,methods,secant_graph)}}}
+
+For highly curved functions, the slope of the secant can change significantly as the increment $\Delta x$ changes. 
 
 * First Derivative
 The first derivative of a function gives us the rate of change of a function by formalizing what is meant by small changes in a way that avoids arbitrary choices of increments. The *first derivative* (or simply derivative if first is understood from context) of a function $f$, if exists, is the limit of the secant of $f$ as the domain change increments go to zero, i.e.,
@@ -19,16 +20,16 @@ $$
 $$
 The derivative is a (new) function giving the rate of change of $f$ for infinitesimal changes in its domain variable. The derivative of $f$ is often denoted by $f'$.
 
+{{{figure(first-derivative,methods,first_derivative_slider)}}}
+
 If a function’s derivative is negative, the function is decreasing. If it is positive, the function is increasing.
 
-{{{figure(first-derivative,differentiation,first_derivative_graph)}}}
-
-#+begin_inplace_exercise
+#+begin_exercise
 The cost of producing $q$ units of a commodity is given by $C(q) = q^{2} + q + 100$. 
   1. Compute the rate of change of $C$ for a unit increment at $q = 100$ . 
   2. Compute the incremental cost $C(q + 1) - C(q)$ and explain in words its meaning. 
   3. Compute the marginal cost $C'(q)$ and $C'(100)$. What is the difference between $C'(q)$ and $C(q + 1) - C(q)$? 
-#+end_inplace_exercise
+#+end_exercise
 
 * Second Derivative
 Nothing prevents us from applying the same differentiation process to a first derivative of a function. Suppose that we are given a function $f$, for which we can calculate the first derivative $f'$. We can then think of $f'$ as a function, say, $g=f'$, and calculate the first derivative of $g$. This gives us the derivative $g'$ of $g$, which can be associated back to the original function $f$ by $g' = (f')'$. 
@@ -43,16 +44,16 @@ The *second derivative* of a function $f$, if exists, is the limit of second ord
 \end{align*}
 If a function's second derivative is negative, the function is *concave* (curvature opening down). If its second derivative is positive, it is *convex* (curvature opening up).
 
-#+begin_two_columns
-{{{figure(concave,differentiation,concave_graph)}}}
-{{{figure(convex,differentiation,convex_graph)}}}
-#+end_two_columns
+#+begin_two-column-figures
+{{{figure(concave,methods,concave_graph)}}}
+{{{figure(convex,methods,convex_graph)}}}
+#+end_two-column-figures
 
-#+begin_inplace_exercise
+#+begin_exercise
 Let $g(x) = 3 x^{3} - \frac{1}{5} x^{5}$.
   1. Find $g'$ and $g''$.
   2. Check where $g$ is increasing and where it is concave.
-#+end_inplace_exercise
+#+end_exercise
 
 * Derivatives of Higher Order
 We can recursively continue defining derivatives of higher order. The interpretations of higher order derivatives become more obscure. A notable exception is the third derivative, which is used to measure the /prudence/ of preferences (attitude towards savings for rainy days) in household finance and macroeconomics. Higher order derivatives are, nevertheless, very useful in economics because they can be used to approximate many functions with arbitrary precision. See the discussion of the [[sec:taylor][Taylor Expansion Section]] for an example.
@@ -68,10 +69,10 @@ A function is *continuous* if arbitrarily small changes in the domain result in 
 
 A stronger concept (that means more restrictive, i.e., less functions are satisfying it) is that of smoothness. We can define smoothness based on the ideas that we have already introduced. A function $f$ is said to be *smooth* if its derivative $f^{(k)}$ exists for any integer $k\in\mathbb{N}$. The graphs of smooth functions do not exhibit any kinks or corners, which is from where these functions are named after.
 
-#+begin_two_columns
-{{{figure(non-continuous,differentiation,non_continuous_graph)}}}
-{{{figure(non-smooth,differentiation,non_smooth_graph)}}}
-#+end_two_columns
+#+begin_two-column-figures
+{{{figure(non-continuous,methods,non_continuous_graph)}}}
+{{{figure(non-smooth,methods,non_smooth_graph)}}}
+#+end_two-column-figures
 
 * Taylor Expansion
 <<sec:taylor>>
@@ -87,9 +88,9 @@ For many well behaved functions the Taylor series is convergent and it approxima
 f(x) &= f(x_{0}) + f^{(1)}(x_{0})(x - x_{0}) + \frac{f^{(2)}(x_{0})}{2}(x - x_{0})^{2} + \dots
 \end{align*}
 
-#+begin_inplace_exercise
+#+begin_exercise
 Perform a first-order Taylor approximation to the function $R(x) = \log (1 + \mathrm{e}^{x})$ around $x=d−p$. This is the approximation used in the Campbell-Shiller decomposition.
-#+end_inplace_exercise
+#+end_exercise
 
 * Product and Quotient Rule
 The *product rule* is used to calculate the derivatives of products of functions. The derivative of the product of two functions $f$ and $g$ is given by
@@ -110,11 +111,11 @@ $$
 (g \circ f)'(x) = g'(f(x)) f'(x).
 $$
 
-#+begin_inplace_exercise
+#+begin_exercise
 Compute the following derivatives:
   1. $\frac{\mathrm{d} Z}{\mathrm{d} t}$ when $Z = \left( u^{2} - 1 \right)^{3}$ and $u =t^{3}$
   2. $\frac{\mathrm{d} K}{\mathrm{d} t}$ when $K = \sqrt{L}$ and $L =  1 + \frac{1}{t}$
-#+end_inplace_exercise
+#+end_exercise
 
 * Partial Derivatives
 The idea of differentiation is not restricted to functions of one variable. We can calculate rate of changes for functions with more variables by letting one variable variate while keeping all other variables fixed. This concept has many applications in economics, business, and finance because many commonly used functions have more than one variable.
@@ -135,11 +136,11 @@ Albeit a bit tedious, it is straightforward to generalize the concept for functi
 
 It is common to denote the partial derivatives using a shorthand notation based on the differentiation variable. In this notation, the partial derivative with respect to the first variable is written as $f_{x_{1}}$, and the partial derivative with respect to the second variable as $f_{x_{2}}$.
 
-#+begin_inplace_exercise
+#+begin_exercise
 Calculate the partial derivatives of the Cobb-Douglas function 
 $$
 u(x_{1}, x_{2}) = A x_{1}^{\alpha} x_{2}^{\beta},
 $$
 where $A$, $\alpha$, and $\beta$ are positive constants. Can you, in addition, calculate the second order partial derivatives?
-#+end_inplace_exercise
+#+end_exercise
 
