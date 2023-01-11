@@ -12,7 +12,7 @@
 #+TITLE: Supportive Quantitative Methods
 #+AUTHOR: Pantelis Karapanagiotis
 #+EMAIL: karapanagiotis [at] ebs [dot] edu
-#+DATE: Summer Term 2022
+#+DATE: Summer Term 2023
 
 #+hugo_base_dir: ../pikappa-teach/
 #+hugo_section: topics
