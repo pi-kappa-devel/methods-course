@@ -1,0 +1,28 @@
+We can only cover so much in a short preparatory course. This topic proposes a guide to help you navigate through your future economic studies.
+
+#+hugo: more
+One introductory book for the mathematics you will deal with in the economics course is [cite:@sydsaeter2012]. I am using the 4th edition of the book. 
+
+The following points do not constitute homework you /have/ to do. Keep in mind that it will take time to cover them, and you cannot do them in a week. Keep these points more as a companion for later on when you read the corresponding sections.
+- Chapters 1, 2: Avoid until you need something in particular from there, or you do it for fun (very low priority)
+- From chapter 3, we cover section 3.6. An additional section that you could read is 3.4. This section does not directly apply to what we do, but it will help you understand many arguments you will find in other textbooks.
+- Chapter 4, we mostly cover. See sections
+  - 4.5: Examples 3, 4 and exercises 2, 3, 4, 6 (relevant to the [[https://teach.pikappa.eu/markets/][Economics of the Market]] course)
+  - 4.6: Examples 1, 2 (relevant to the [[https://teach.pikappa.eu/markets/][Economics of the Market]] course) and exercises 3 (use the first order conditions and conclude how easier it is from what the exercise suggests), 5, 6 
+  - 4.7 - 4.10: Use only as a reference if you want to refresh your knowledge about particular functions.
+- Chapter 5: Skip for now. Read only for fun or if you need to review our discussion about the inverse function. 
+- Chapter 6: We cover most of the ideas. Use for review. See sections
+  - 6.2: Exercises 1, 2, 3, 4, 7 (only for practice)
+  - 6.4:  Exercises 1, 2, 3, 6, 7 (nice that these exercises have economic context)
+  - 6.6-6.8: Use as a reference if you forget something.
+- Chapter 7: A bit more advanced. Skip for now.
+  - 7.7 Elasticities: We do not cover this, but it is quite important for all the economics courses. Prioritize its reading if you can.
+- Chapter 8: More mathematical details than our approach in the class. Read with caution.
+  - 8.3: Examples 1, 2, 4 and exercises 2, 4, 5 (these are very relevant to the [[https://teach.pikappa.eu/markets/][Economics of the Market]])
+- Chapter 13: Quite more mathematical than our approach. Avoid it for now because you might get lost. Potential exceptions are
+  - 13.1: Examples 3,4, and exercise 3. These are helpful for Macro courses.
+- Chapter 14: We cover some elements together.
+  - Read 14.1: Useful for microeconomics 1
+
+* References                                               :topic_references:
+#+print_bibliography: here

@@ -1,6 +1,7 @@
 # Local Variables:
 # eval: (load-file (format "%s../pikappa-teach/export-tags-and-categories.el" (file-name-directory buffer-file-name)))
-# eval: (add-hook 'org-export-before-parsing-hook 'add-tags-to-headings)
+# eval: (add-hook 'org-export-before-parsing-functions 'add-tags-to-headings)
+# eval: (add-hook 'org-export-before-parsing-functions (set-bibliography-before-parsing (buffer-file-name) "references.bib"))
 # End:
 
 #+options: tags:t, broken-links:t, timestamp:nil, email:t, toc:nil
@@ -9,11 +10,12 @@
 
 #+macro: figure @@html:<figure id='$1-wrapper' class='figure-wrapper'>@@{{{place-anchor($1-figure)}}}@@html:<div id='$1-figure'></div><script type='module'>import * as mod from '/methods/js/$2.js'; mod.make_$3('$1-figure');</script></figure>@@
 
-#+TITLE: Supportive Quantitative Methods
-#+AUTHOR: Pantelis Karapanagiotis
-#+EMAIL: karapanagiotis [at] ebs [dot] edu
-#+DATE: Summer Term 2023
+#+title: Supportive Quantitative Methods
+#+author: Pantelis Karapanagiotis
+#+email: karapanagiotis [at] ebs [dot] edu
+#+date: Summer Term 2023
 
+#+cite_export: csl 
 #+hugo_base_dir: ../pikappa-teach/
 #+hugo_section: topics
 
@@ -44,3 +46,11 @@
 :EXPORT_HUGO_WEIGHT: auto
 :END:
 #+include: sec/optimization.org
+
+* A Hitchhiker's Guide to Mathematics for Economic Courses
+:PROPERTIES:
+:EXPORT_FILE_NAME: guide
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+#+include: sec/guide.org
+
