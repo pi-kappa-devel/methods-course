@@ -25,4 +25,4 @@ The following points do not constitute homework you /have/ to do. Keep in mind t
   - Read 14.1: Useful for microeconomics 1
 
 * References                                               :topic_references:
-#+print_bibliography: here
+#+print_bibliography: 
