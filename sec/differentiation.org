@@ -24,19 +24,20 @@ The derivative is a (new) function giving the rate of change of $f$ for infinite
 
 If a function’s derivative is negative, the function is decreasing. If it is positive, the function is increasing.
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 The cost of producing $q$ units of a commodity is given by $C(q) = q^{2} + q + 100$. 
   1. Compute the rate of change of $C$ for a unit increment at $q = 100$ . 
   2. Compute the incremental cost $C(q + 1) - C(q)$ and explain in words its meaning. 
   3. Compute the marginal cost $C'(q)$ and $C'(100)$. What is the difference between $C'(q)$ and $C(q + 1) - C(q)$? 
-#+end_exercise
+#+end_activity
 
 * Second Derivative
 Nothing prevents us from applying the same differentiation process to a first derivative of a function. Suppose that we are given a function $f$, for which we can calculate the first derivative $f'$. We can then think of $f'$ as a function, say, $g=f'$, and calculate the first derivative of $g$. This gives us the derivative $g'$ of $g$, which can be associated back to the original function $f$ by $g' = (f')'$. 
 
 Why would we be interested in something like this? The derivative of the derivative of $f$ reveals information about the curvature of $f$. The curvature of a function can be geometrically thought of as the function's bending. In economics and finance, the curvatures are pivotal in calculating the risk preferences of individuals (see the /relative/ and /absolute risk aversion/ measures). 
 
-The *second derivative* of a function $f$, if exists, is the limit of second order finite differences of $f$ as the domain change increments go to zero, i.e.,
+The *second derivative* of a function $f$, if exists, is the limit of second-order finite differences of $f$ as the domain change increments go to zero, i.e.,
 \begin{align*}
 \frac{\mathrm{d}^{2} f(x)}{\mathrm{d} x^{2}} &= \lim_{\Delta x \to 0} \frac{f(x_{1} + \Delta x) - 2f(x_{1}) + f(x_{1} - \Delta x)}{(\Delta x)^{2}} \\
 &= \lim_{\Delta x \to 0} \frac{\frac{f(x_{1} + \Delta x) - f(x_{1})}{\Delta x} - \frac{f(x_{1}) - f(x_{1} - \Delta x)}{\Delta x}}{\Delta x} \\
@@ -49,14 +50,15 @@ If a function's second derivative is negative, the function is *concave* (curvat
 {{{figure(convex,methods,convex_graph)}}}
 #+end_two-column-figures
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 Let $g(x) = 3 x^{3} - \frac{1}{5} x^{5}$.
   1. Find $g'$ and $g''$.
   2. Check where $g$ is increasing and where it is concave.
-#+end_exercise
+#+end_activity
 
 * Derivatives of Higher Order
-We can recursively continue defining derivatives of higher order. The interpretations of higher order derivatives become more obscure. A notable exception is the third derivative, which is used to measure the /prudence/ of preferences (attitude towards savings for rainy days) in household finance and macroeconomics. Higher order derivatives are, nevertheless, very useful in economics because they can be used to approximate many functions with arbitrary precision. See the discussion of the [[sec:taylor][Taylor Expansion Section]] for an example.
+We can recursively continue defining derivatives of higher order. The interpretations of higher-order derivatives become more obscure. A notable exception is the third derivative, which is used to measure the /prudence/ of preferences (attitude towards savings for rainy days) in household finance and macroeconomics. Higher-order derivatives are, nevertheless, very useful in economics because they can be used to approximate many functions with arbitrary precision. See the discussion of the [[sec:taylor][Taylor Expansion Section]] for an example.
 
 For any $k\ge 2$, the $k\text{-th}$ order *derivative* of a function $f$, if exists, is the limit of the secant of the $(k-1)\text{-th}$ derivative of $f$ as the domain change increments go to zero, i.e.,
 \begin{align*}
@@ -67,7 +69,7 @@ The $k\text{-th}$ order derivative of a function $f$ is more compactly denoted a
 * Continuous and Smooth Functions
 A function is *continuous* if arbitrarily small changes in the domain result in arbitrarily small changes in the range of the function. Giving an exact definition or a good intuition of continuity requires introducing concepts that go way beyond the scope of the material. In business and economic studies, continuity is mostly treated as a technicality that is always present in the used functions. The good news is that whenever a function is differentiable, it is also continuous. Therefore, familiarity with the usual calculus toolbox can serve as a guide for continuity.
 
-A stronger concept (that means more restrictive, i.e., less functions are satisfying it) is that of smoothness. We can define smoothness based on the ideas that we have already introduced. A function $f$ is said to be *smooth* if its derivative $f^{(k)}$ exists for any integer $k\in\mathbb{N}$. The graphs of smooth functions do not exhibit any kinks or corners, which is from where these functions are named after.
+A stronger concept (that means more restrictive, i.e., fewer functions are satisfying it) is that of smoothness. We can define smoothness based on the ideas that we have already introduced. A function $f$ is said to be *smooth* if its derivative $f^{(k)}$ exists for any integer $k\in\mathbb{N}$. The graphs of smooth functions do not exhibit any kinks or corners, which is from where these functions are named after.
 
 #+begin_two-column-figures
 {{{figure(non-continuous,methods,non_continuous_graph)}}}
@@ -83,14 +85,15 @@ For a smooth function $f$ the *Taylor series expansion* of $f$ at $x_{0}$ is the
 T_{f}(x) &= \sum_{k=0}^{\infty} \frac{f^{(k)}(x_{0})}{k!}(x - x_{0})^{k} \\
 &= f(x_{0}) + f^{(1)}(x_{0})(x - x_{0}) + \frac{f^{(2)}(x_{0})}{2}(x - x_{0})^{2} + \dots
 \end{align*}
-For many well behaved functions the Taylor series is convergent and it approximates $f$. For such cases, we simply write
+For many well-behaved functions, the Taylor series is convergent and it approximates $f$. For such cases, we simply write
 \begin{align*}
 f(x) &= f(x_{0}) + f^{(1)}(x_{0})(x - x_{0}) + \frac{f^{(2)}(x_{0})}{2}(x - x_{0})^{2} + \dots
 \end{align*}
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 Perform a first-order Taylor approximation to the function $R(x) = \log (1 + \mathrm{e}^{x})$ around $x=d−p$. This is the approximation used in the Campbell-Shiller decomposition.
-#+end_exercise
+#+end_activity
 
 * Product and Quotient Rule
 The *product rule* is used to calculate the derivatives of products of functions. The derivative of the product of two functions $f$ and $g$ is given by
@@ -111,14 +114,15 @@ $$
 (g \circ f)'(x) = g'(f(x)) f'(x).
 $$
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 Compute the following derivatives:
   1. $\frac{\mathrm{d} Z}{\mathrm{d} t}$ when $Z = \left( u^{2} - 1 \right)^{3}$ and $u =t^{3}$
   2. $\frac{\mathrm{d} K}{\mathrm{d} t}$ when $K = \sqrt{L}$ and $L =  1 + \frac{1}{t}$
-#+end_exercise
+#+end_activity
 
 * Partial Derivatives
-The idea of differentiation is not restricted to functions of one variable. We can calculate rate of changes for functions with more variables by letting one variable variate while keeping all other variables fixed. This concept has many applications in economics, business, and finance because many commonly used functions have more than one variable.
+The idea of differentiation is not restricted to the functions of one variable. We can calculate the rate of change for functions with more variables by letting one variable variate while keeping all other variables fixed. This concept has many applications in economics, business, and finance because many commonly used functions have more than one variable.
 
 Suppose that we are given a function $f\colon X_{1} \times X_{2} \to Y$. The *partial derivative* of $f$ with respect to the first variable is defined as
 $$
@@ -136,11 +140,12 @@ Albeit a bit tedious, it is straightforward to generalize the concept for functi
 
 It is common to denote the partial derivatives using a shorthand notation based on the differentiation variable. In this notation, the partial derivative with respect to the first variable is written as $f_{x_{1}}$, and the partial derivative with respect to the second variable as $f_{x_{2}}$.
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 Calculate the partial derivatives of the Cobb-Douglas function 
 $$
 u(x_{1}, x_{2}) = A x_{1}^{\alpha} x_{2}^{\beta},
 $$
-where $A$, $\alpha$, and $\beta$ are positive constants. Can you, in addition, calculate the second order partial derivatives?
-#+end_exercise
+where $A$, $\alpha$, and $\beta$ are positive constants. Can you, in addition, calculate the second-order partial derivatives?
+#+end_activity
 

@@ -1,6 +1,6 @@
 # Local Variables:
 # eval: (load-file (format "%s../pikappa-teach/export-tags-and-categories.el" (file-name-directory buffer-file-name)))
-# eval: (add-hook 'org-export-before-parsing-functions 'add-tags-to-headings)
+# eval: (add-hook 'org-export-before-parsing-functions 'add-tags-to-heading)
 # eval: (add-hook 'org-export-before-parsing-functions (set-bibliography-before-parsing (buffer-file-name) "references.bib"))
 # End:
 
@@ -18,6 +18,7 @@
 #+cite_export: csl 
 #+hugo_base_dir: ../pikappa-teach/
 #+hugo_section: topics
+#+hugo_paired_shortcodes: activity
 
 * Sets
 :PROPERTIES:

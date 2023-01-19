@@ -1,4 +1,4 @@
-Decision problems in economics are predominantly described as optimization problems. For example, suppose that one has two decide among a finite number of alternatives $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$. Alternatives are evaluated based on a payoff function $u$. The payoff she receives by choosing alternative $\alpha_{j}$ is given by $u(\alpha_{j})$. One way to model the agent's decision is to assume that she chooses the alternative that maximizes the payoff she gains.
+Decision problems in economics are predominantly described as optimization problems. For example, suppose that one has to decide among a finite number of alternatives $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$. Alternatives are evaluated based on a payoff function $u$. The payoff she receives by choosing alternative $\alpha_{j}$ is given by $u(\alpha_{j})$. One way to model the agent's decision is to assume that she chooses the alternative that maximizes the payoff she gains.
 #+hugo: more
 
 We say that $\alpha_{j}$ *maximizes* $u$ or $\alpha_{j}$ is a *maximizer* of $u$ if $u(a_{j}) \ge u(a_{i})$ for all $i = 1, \dots, n$. Then, we also say that $u(a_{j})$ is the *maximum* of $u$ or that $u$ attains its maximum at $\alpha_{j}$. Analogously we can define the minimizer and minimum of $u$ based on the condition $u(\alpha_{j}) \le u(a_{i})$ for all $i = 1, \dots, n$.
@@ -7,50 +7,51 @@ In our small example, optimization reduces to comparing (sorting) all the values
 
 * Unconstrained Optimization
 
-Suppose that we are given a decision problem described by a function $f(c, p)$, where is $c$ is a decision variable under the agent's control and $p$ is a parameter variable that the agent does not affect. The goal of the decision problem is to maximize $f$. The *unconstrained optimization problem* corresponding to this decision setting is
+Suppose that we are given a decision problem described by a function $f(c, p)$, where $c$ is a decision variable under the agent's control and $p$ is a parameter variable that the agent does not affect. The goal of the decision problem is to maximize $f$. The *unconstrained optimization problem* corresponding to this decision setting is
 \begin{align*}
  \max_{c} f(c, p).
 \end{align*}
-The function $f$ is known as the *objective* and the optimization variable $c$ as the *control variable* of the optimization problem.
+The function $f$ is known as the *objective* and the optimization variable $c$ is the *control variable* of the optimization problem.
 
 Using Fermat's theorem, we know that if $f$ attains its maximum at $c_{0}$ given $p$, then its first (partial) derivative should necessarily be equal to zero, namely $f_{c}(c_{0}, p) = 0$. We can use this idea to locate any local maximizers. By imposing the condition
 \begin{align*}
 f_{c}(c, p) \overset{!}{=} 0,
 \end{align*}
-and solving it for $c$, we can locate potential local maximizers of the optimization problem. This condition is so commonly used that it is named. It is called *first order* or *necessary* condition. The candidate maximizers are called *critical points*.
+and solving it for $c$, we can locate potential local maximizers of the optimization problem. This condition is so commonly used that it is named. It is called the *first-order* or *necessary* condition. The candidate maximizers are called *critical points*.
 
-Thus, we have a way of obtaining candidate maximizers, but how do we know which candidates are actually maximizers? Some of the candidates might as well be minimizers, as those too satisfy the first order condition. Whether a candidate is a local maximizer or minimizer depends on the (local) curvature of the function. If the function is concave in a small neighborhood around the candidate (curvature opening down), then the candidate is a local maximizer. Instead, if the function is convex in a small neighborhood around the candidate (curvature opening up), then the candidate is a local minimizer.
+Thus, we have a way of obtaining candidate maximizers, but how do we know which candidates are actually maximizers? Some of the candidates might as well be minimizers, as those too satisfy the first-order condition. Whether a candidate is a local maximizer or minimizer depends on the (local) curvature of the function. If the function is concave in a small neighborhood around the candidate (curvature opening down), then the candidate is a local maximizer. Instead, if the function is convex in a small neighborhood around the candidate (curvature opening up), then the candidate is a local minimizer.
 
 Therefore, the problem's maximizers are all the candidates that satisfy the condition
 \begin{align*}
 f_{cc}(c, p) \overset{!}{<} 0.
 \end{align*}
-This condition is called *second order* or *sufficient* condition.
+This condition is called the *second-order* or *sufficient* condition.
 
 We have kept the parameter value $p$ fixed in the preceding discussion. Thus, any maximizer that we have obtained depends on the fixed value of $p$. We can change the value of $p$ to $p'$ and repeat the process. The new maximizer will be based on the new parameter value $p'$ in this case. In this manner, we can define a function such that for each parameter value $p$, we get an optimizer $c(p)$. This mapping is called the *optimal control function*. Substituting the optimal control in the objective function we get
 \begin{align*}
 v(p) = f(c(p), p) =  \max_{c} f(c, p).
 \end{align*}
-In this way, we have eliminated the dependence of the objective on the control variable and expressed the maximized values exclusively as a function of the parameter $p$. The function $v$ gives the maximum value of $f$ for each parameter $p$, and it is called *value function*.
+In this way, we have eliminated the dependence of the objective on the control variable and expressed the maximized values exclusively as a function of the parameter $p$. The function $v$ gives the maximum value of $f$ for each parameter $p$, and it is called the *value function*.
 
 {{{figure(unconstrained-maximization,methods,unconstrained_maximization_slider)}}}
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 1. Consider the function $f(c, p) = p - (c-p)^{2}$ for $c, p \in \mathbb{R}$.
-   1. Calculate the maximization candidates using the first order condition for a fixed value of $p$.
-   2. Show that these candidates are actually maximizers using the second order condition.
+   1. Calculate the maximization candidates using the first-order condition for a fixed value of $p$.
+   2. Show that these candidates are indeed maximizers using the second-order condition.
    3. What is the optimal control function of this problem?
    4. What is the value function of this problem?
 
 2. Let $f$ be defined by $f(x) = 2 - \frac{4x}{x^{2} + 3}$
    1. Find $f'$ and $f''$.
-   2. Find all the critical points and classify them to maxima and minima.
-#+end_exercise
+   2. Find all the critical points and classify them into maxima and minima.
+#+end_activity
 
 * Constrained Optimization
 In some decision problems, agents do not have access to the full universe of alternatives. For instance, firms are subject to technological constraints, and they can only choose to produce technologically feasible quantities. Similarly, households can only buy commodities and services that are affordable for their budgets. How can we describe such decision problems?
 
-Suppose that we are given a decision problem described again by a function $f(c, p)$, where is $c$ is the control variable and $p$ a parameter. The goal of the decision problem is to maximize $f$. However, the agent cannot freely choose $c$. The agent's choices have to satisfy the *constraint* $g(c, I) = 0$, where $I$ is another parameter that the agent does not control. The *constrained optimization problem* corresponding to this decision setting is
+Suppose that we are given a decision problem described again by a function $f(c, p)$, where $c$ is the control variable and $p$ is a parameter. The goal of the decision problem is to maximize $f$. However, the agent cannot freely choose $c$. The agent's choices have to satisfy the *constraint* $g(c, I) = 0$, where $I$ is another parameter that the agent does not control. The *constrained optimization problem* corresponding to this decision setting is
 \begin{align*}
  \max_{c} \, & f(c, p) \\
  s.t. \quad &g(c, I) = 0.
@@ -66,8 +67,9 @@ Under some conditions, the maximizers or minimizers of the constrained maximizat
 \begin{align*}
 \max_{c, \lambda} \mathcal{L}(c, \lambda, p, I),
 \end{align*}
-We can get the maximizers or minimizers of the original constrained problem using the unconstrained problem's first and second order conditions.
+We can get the maximizers or minimizers of the original constrained problem using the unconstrained problem's first and second-order conditions.
 
-#+begin_exercise
+#+attr_shortcode: :type exercise
+#+begin_activity
 Maximize the area of a rectangle with length $\alpha$ and width $\beta$ such that its perimeter is equal to $16\mathrm{cm}$.
-#+end_exercise
+#+end_activity
