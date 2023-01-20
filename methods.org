@@ -4,7 +4,7 @@
 # eval: (add-hook 'org-export-before-parsing-functions (set-bibliography-before-parsing (buffer-file-name) "references.bib"))
 # End:
 
-#+options: tags:t, broken-links:t, timestamp:nil, email:t, toc:nil
+#+options: tags:t broken-links:t timestamp:nil email:t toc:nil
 
 #+macro: place-anchor @@html:<a id='$1-anchor' style='position:relative;visibility:hidden;top:-50px;'></a>@@
 
