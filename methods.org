@@ -8,7 +8,7 @@
 
 #+macro: place-anchor @@html:<a id='$1-anchor' style='position:relative;visibility:hidden;top:-50px;'></a>@@
 
-#+macro: figure @@html:<figure id='$1-wrapper' class='figure-wrapper'>@@{{{place-anchor($1-figure)}}}@@html:<div id='$1-figure'></div><script type='module'>import * as mod from '/methods/js/$2.js'; mod.make_$3('$1-figure');</script></figure>@@
+#+macro: figure @@html:<figure id='$1-wrapper' class='figure-wrapper'>@@{{{place-anchor(figure-$1-figure)}}}@@html:<div id='$1-figure'></div><script type='module'>import * as mod from '/methods/js/$2.js'; mod.make_$3('$1-figure');</script></figure>@@
 
 #+title: Supportive Quantitative Methods
 #+author: Pantelis Karapanagiotis
