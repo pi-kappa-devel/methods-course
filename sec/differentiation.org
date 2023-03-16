@@ -4,7 +4,7 @@ A function’s rate of change conveys very useful information about the nature o
 So far, so good, but when it comes to the details of calculating the rate of change of $C$, one quickly realizes that it is not very clear what is meant by "slightly increasing production". Should we use production increments of one unit? Should we use some other arbitrary increment $\Delta q = q_{2} - q_{1}$? Well, if the cost function $C$ is affine or constant, then unit increments work fine. As a matter of fact, any arbitrary choice of increment $\Delta q$ works equally well. However, our luck is exhausted with such simple functions. For functions with non-trivial curvatures, the change that we calculate depends crucially on the length of the increment $\Delta q$ that we use.
 
 * The Secant
-A *secant* is a line with endpoints two distinct points of a function's graph. The secant's slope measures the rate of change of a function for a given increment. For a real function $f$ and two points $x_{1}, x_{2}$ in its domain, the secant's slope is given by the ratio of changes in the range and the domain of the function, i.e.
+A *secant* is a line with endpoints two distinct points of a function's graph. The secant's slope measures the rate of change of a function for a given increment. For a real function $f$ and two points $x_{1}, x_{2}$ in its domain, the secant's slope is given by the ratio of changes in the range and the domain of the function, i.e.,
 $$
 \frac{\Delta y}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{\Delta x} = \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}}.
 $$
